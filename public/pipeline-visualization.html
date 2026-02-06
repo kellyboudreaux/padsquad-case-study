@@ -24,7 +24,7 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1600px;
             width: 100%;
         }
 
@@ -50,7 +50,7 @@
 
         .pipeline {
             display: grid;
-            grid-template-columns: 250px 1fr 300px;
+            grid-template-columns: 280px 1fr 350px;
             gap: 40px;
             margin-bottom: 40px;
         }
@@ -121,17 +121,31 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            transition: all 0.5s ease;
+        }
+
+        .stage-card.active {
+            background: rgba(96, 165, 250, 0.15);
+            border-color: #60a5fa;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(96, 165, 250, 0.4);
         }
 
         .stage-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 28px;
             flex-shrink: 0;
+            transition: all 0.5s ease;
+        }
+
+        .stage-card.active .stage-icon {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
         }
 
         .stage-content {
@@ -147,22 +161,33 @@
         .stage-detail {
             font-size: 0.875rem;
             color: #64748b;
-            margin-top: 8px;
-            padding: 8px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
+            margin-top: 12px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            border-left: 3px solid #60a5fa;
         }
 
         .stage-detail-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            margin: 4px 0;
+            margin: 6px 0;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .stage-detail-item:nth-child(1) { animation-delay: 0.2s; }
+        .stage-detail-item:nth-child(2) { animation-delay: 0.4s; }
+        .stage-detail-item:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
 
         .checkmark {
             color: #34d399;
+            font-weight: bold;
         }
 
         .processing {
@@ -184,47 +209,89 @@
             border: 1px solid rgba(96, 165, 250, 0.3);
         }
 
-        .metric {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 12px 0;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-        }
-
         .metric-label {
             font-size: 0.875rem;
+            font-weight: 600;
             color: #94a3b8;
+            margin-bottom: 12px;
         }
 
-        .metric-value {
+        .progress-bar-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            height: 40px;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #34d399, #10b981);
+            border-radius: 8px;
+            transition: width 2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+        }
+
+        .progress-value {
             font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .counter-display {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+            color: #34d399;
+            text-shadow: 0 0 20px rgba(52, 211, 153, 0.5);
+        }
+
+        .metric-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .metric-box {
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-box.before {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .metric-box.after {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+
+        .metric-box-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+
+        .metric-box-value {
+            font-size: 1.125rem;
             font-weight: 700;
         }
 
-        .metric-before {
+        .metric-box.before .metric-box-value {
             color: #ef4444;
-            text-decoration: line-through;
-            opacity: 0.6;
         }
 
-        .metric-after {
+        .metric-box.after .metric-box-value {
             color: #34d399;
-        }
-
-        .flow-line {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #60a5fa, transparent);
-            opacity: 0;
-            animation: flow 3s ease-in-out infinite;
-        }
-
-        @keyframes flow {
-            0%, 100% { opacity: 0; transform: translateX(-100%); }
-            50% { opacity: 1; transform: translateX(0); }
         }
 
         .controls {
@@ -254,6 +321,11 @@
             box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3);
         }
 
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
         .btn-secondary {
             background: rgba(255, 255, 255, 0.1);
             color: white;
@@ -276,10 +348,10 @@
 
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
+            50% { opacity: 0.5; transform: scale(1.3); }
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1200px) {
             .pipeline {
                 grid-template-columns: 1fr;
             }
@@ -312,13 +384,20 @@
             height: 20px;
             border-radius: 4px;
         }
+
+        .timer-display {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>PADSquad Data Automation Pipeline</h1>
-            <p>From fragmented client data to automated insights in real-time</p>
+            <p>Watch client data transform into automated insights in real-time</p>
         </div>
 
         <div class="pipeline">
@@ -358,7 +437,7 @@ Investment
 
             <!-- MIDDLE: Pipeline Stages -->
             <div class="column">
-                <div class="card stage-card">
+                <div class="card stage-card" id="stage1">
                     <div class="stage-icon" style="background: linear-gradient(135deg, #0176d3, #1e3a8a);">
                         📧
                     </div>
@@ -368,7 +447,7 @@ Investment
                     </div>
                 </div>
 
-                <div class="card stage-card">
+                <div class="card stage-card" id="stage2">
                     <div class="stage-icon" style="background: linear-gradient(135deg, #e8912d, #c75d1e);">
                         🔧
                     </div>
@@ -377,24 +456,24 @@ Investment
                         <div class="stage-status" id="stage2-status">Standby</div>
                         <div class="stage-detail" id="stage2-detail" style="display: none;">
                             <div class="stage-detail-item">
-                                <span class="checkmark">✓</span> Removing subtotals
+                                <span class="checkmark">✓</span> Removing subtotals from Excel
                             </div>
                             <div class="stage-detail-item">
-                                <span class="checkmark">✓</span> Standardizing dates
+                                <span class="checkmark">✓</span> Standardizing date formats
                             </div>
                             <div class="stage-detail-item">
-                                <span class="checkmark">✓</span> Handling nulls
+                                <span class="checkmark">✓</span> Handling null values
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card stage-card">
+                <div class="card stage-card" id="stage3">
                     <div class="stage-icon" style="background: linear-gradient(135deg, #60a5fa, #1e40af);">
                         🤖
                     </div>
                     <div class="stage-content">
-                        <div class="card-content">AI Normalization</div>
+                        <div class="card-content">AI Field Normalization</div>
                         <div class="stage-status" id="stage3-status">Standby</div>
                         <div class="stage-detail" id="stage3-detail" style="display: none;">
                             <div class="stage-detail-item">
@@ -410,7 +489,7 @@ Investment
                     </div>
                 </div>
 
-                <div class="card stage-card">
+                <div class="card stage-card" id="stage4">
                     <div class="stage-icon" style="background: linear-gradient(135deg, #0176d3, #1e3a8a);">
                         🗄️
                     </div>
@@ -420,7 +499,7 @@ Investment
                     </div>
                 </div>
 
-                <div class="card stage-card">
+                <div class="card stage-card" id="stage5">
                     <div class="stage-icon" style="background: linear-gradient(135deg, #e8912d, #c75d1e);">
                         📊
                     </div>
@@ -431,53 +510,73 @@ Investment
                 </div>
             </div>
 
-            <!-- RIGHT: Impact Metrics -->
+            <!-- RIGHT: Impact Metrics with Progress Bars -->
             <div class="column">
                 <div class="card impact-card">
-                    <div class="card-title">Ops Staff Capacity</div>
-                    <div class="metric">
-                        <span class="metric-label">Before:</span>
-                        <span class="metric-value metric-before" id="capacity-before">20 clients</span>
+                    <div class="metric-label">Ops Staff Capacity</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="capacity-bar" style="width: 33%;">
+                            <div class="progress-value" id="capacity-value">20 clients</div>
+                        </div>
                     </div>
-                    <div class="metric">
-                        <span class="metric-label">After:</span>
-                        <span class="metric-value metric-after" id="capacity-after">60 clients</span>
-                    </div>
-                </div>
-
-                <div class="card impact-card">
-                    <div class="card-title">Account Manager Access</div>
-                    <div class="metric">
-                        <span class="metric-label">Before:</span>
-                        <span class="metric-value metric-before">3-5 days wait</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">After:</span>
-                        <span class="metric-value metric-after">One-click access</span>
+                    <div class="metric-comparison">
+                        <div class="metric-box before">
+                            <div class="metric-box-label">Before</div>
+                            <div class="metric-box-value">20 clients</div>
+                        </div>
+                        <div class="metric-box after">
+                            <div class="metric-box-label">After</div>
+                            <div class="metric-box-value">60 clients</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card impact-card">
-                    <div class="card-title">Processing Time</div>
-                    <div class="metric">
-                        <span class="metric-label">Before:</span>
-                        <span class="metric-value metric-before" id="time-before">15 hrs/week</span>
+                    <div class="metric-label">Account Manager Response Time</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="response-bar" style="width: 10%; background: linear-gradient(90deg, #ef4444, #dc2626);">
+                            <div class="progress-value" id="response-value">5 days</div>
+                        </div>
                     </div>
-                    <div class="metric">
-                        <span class="metric-label">After:</span>
-                        <span class="metric-value metric-after" id="time-after">1.25 hrs/week</span>
+                    <div class="metric-comparison">
+                        <div class="metric-box before">
+                            <div class="metric-box-label">Before</div>
+                            <div class="metric-box-value">3-5 days</div>
+                        </div>
+                        <div class="metric-box after">
+                            <div class="metric-box-label">After</div>
+                            <div class="metric-box-value">Instant</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card impact-card">
-                    <div class="card-title">Annual Savings</div>
-                    <div class="metric">
-                        <span class="metric-label">Cost reduction:</span>
-                        <span class="metric-value metric-after" id="savings">$49,500</span>
+                    <div class="metric-label">Weekly Processing Hours</div>
+                    <div class="counter-display" id="hours-counter">15.0 hrs</div>
+                    <div class="metric-comparison">
+                        <div class="metric-box before">
+                            <div class="metric-box-label">Before</div>
+                            <div class="metric-box-value">15 hrs/week</div>
+                        </div>
+                        <div class="metric-box after">
+                            <div class="metric-box-label">After</div>
+                            <div class="metric-box-value">1.25 hrs/week</div>
+                        </div>
                     </div>
-                    <div class="metric">
-                        <span class="metric-label">Efficiency gain:</span>
-                        <span class="metric-value metric-after">92%</span>
+                </div>
+
+                <div class="card impact-card">
+                    <div class="metric-label">Annual Impact</div>
+                    <div class="counter-display" id="savings-counter">$0</div>
+                    <div class="metric-comparison">
+                        <div class="metric-box before">
+                            <div class="metric-box-label">Time Saved</div>
+                            <div class="metric-box-value">660 hrs/year</div>
+                        </div>
+                        <div class="metric-box after">
+                            <div class="metric-box-label">Cost Savings</div>
+                            <div class="metric-box-value">$26,400</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -487,6 +586,8 @@ Investment
             <button class="btn btn-primary" id="playBtn">▶ Play Animation</button>
             <button class="btn btn-secondary" id="resetBtn">↻ Reset</button>
         </div>
+
+        <div class="timer-display" id="timer">Next loop in 2:00</div>
 
         <div class="legend">
             <div class="legend-item">
@@ -510,6 +611,7 @@ Investment
 
     <script>
         let isAnimating = false;
+        let countdownInterval = null;
 
         async function animatePipeline() {
             if (isAnimating) return;
@@ -519,82 +621,132 @@ Investment
             playBtn.textContent = '⏸ Animating...';
             playBtn.disabled = true;
 
-            // Stage 1: Email-to-Case
-            await updateStage('stage1-status', 'Processing...', true);
-            await wait(1500);
-            await updateStage('stage1-status', 'Complete ✓', false);
+            clearInterval(countdownInterval);
+            document.getElementById('timer').textContent = 'Animation in progress...';
 
-            // Stage 2: Tableau Prep
-            await wait(500);
-            await updateStage('stage2-status', 'Cleaning data...', true);
-            document.getElementById('stage2-detail').style.display = 'block';
-            await wait(2000);
-            await updateStage('stage2-status', 'Complete ✓', false);
+            // Stage 1: Email-to-Case (15 seconds)
+            await activateStage('stage1', 'stage1-status', 'Receiving client data...', null, 15000);
 
-            // Stage 3: AI Normalization
-            await wait(500);
-            await updateStage('stage3-status', 'Mapping fields...', true);
-            document.getElementById('stage3-detail').style.display = 'block';
-            await wait(2500);
-            await updateStage('stage3-status', 'Complete ✓', false);
+            // Stage 2: Tableau Prep (20 seconds)
+            await activateStage('stage2', 'stage2-status', 'Cleaning and shaping data...', 'stage2-detail', 20000);
 
-            // Stage 4: Salesforce SSOT
-            await wait(500);
-            await updateStage('stage4-status', 'Writing to database...', true);
-            await wait(1500);
-            await updateStage('stage4-status', 'Complete ✓', false);
+            // Stage 3: AI Normalization (25 seconds)
+            await activateStage('stage3', 'stage3-status', 'AI mapping field names...', 'stage3-detail', 25000);
 
-            // Stage 5: Report Generation
-            await wait(500);
-            await updateStage('stage5-status', 'Generating report...', true);
-            await wait(2000);
-            await updateStage('stage5-status', 'Report Ready ✓', false);
+            // Stage 4: Salesforce SSOT (15 seconds)
+            await activateStage('stage4', 'stage4-status', 'Writing to database...', null, 15000);
 
-            // Animate metrics
-            await wait(500);
-            animateMetrics();
+            // Stage 5: Report Generation (20 seconds)
+            await activateStage('stage5', 'stage5-status', 'Generating PADSquad report...', null, 20000);
+
+            // Animate impact metrics (15 seconds)
+            await animateMetrics(15000);
+
+            // Hold final state (10 seconds)
+            await wait(10000);
 
             isAnimating = false;
             playBtn.textContent = '▶ Play Again';
             playBtn.disabled = false;
+
+            // Start countdown to auto-replay
+            startCountdown(120); // 2 minutes
         }
 
-        async function updateStage(elementId, text, showSpinner) {
-            const element = document.getElementById(elementId);
-            element.innerHTML = text;
-            if (showSpinner) {
-                element.innerHTML += ' <span class="processing"></span>';
+        async function activateStage(stageId, statusId, statusText, detailId, duration) {
+            // Activate stage
+            const stage = document.getElementById(stageId);
+            stage.classList.add('active');
+
+            // Update status with spinner
+            const status = document.getElementById(statusId);
+            status.innerHTML = statusText + ' <span class="processing"></span>';
+
+            // Show details if applicable
+            if (detailId) {
+                document.getElementById(detailId).style.display = 'block';
             }
+
+            // Wait for duration
+            await wait(duration);
+
+            // Mark complete
+            status.innerHTML = 'Complete ✓';
+
+            // Deactivate stage
+            stage.classList.remove('active');
         }
 
-        function wait(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
+        async function animateMetrics(duration) {
+            const startTime = Date.now();
+
+            // Animate capacity bar
+            animateProgressBar('capacity-bar', 'capacity-value', 33, 100, 20, 60, ' clients', duration);
+
+            // Animate response time bar (reverse - gets better)
+            animateResponseBar('response-bar', 'response-value', duration);
+
+            // Animate hours counter (decreasing)
+            animateCounter('hours-counter', 15, 1.25, ' hrs', duration);
+
+            // Animate savings counter (increasing)
+            animateCounter('savings-counter', 0, 26400, '$', duration, true);
+
+            await wait(duration);
         }
 
-        function animateMetrics() {
-            // Animate capacity counter
-            animateCounter('capacity-after', 20, 60, 'clients', 1500);
-
-            // Animate time counter
-            animateCounter('time-before', 15, 1.25, 'hrs/week', 1500);
-
-            // Animate savings
-            animateCounter('savings', 0, 49500, '$', 1500, true);
-        }
-
-        function animateCounter(elementId, start, end, suffix, duration, isCurrency = false) {
-            const element = document.getElementById(elementId);
+        function animateProgressBar(barId, valueId, startPercent, endPercent, startValue, endValue, suffix, duration) {
+            const bar = document.getElementById(barId);
+            const valueEl = document.getElementById(valueId);
             const startTime = Date.now();
 
             function update() {
                 const elapsed = Date.now() - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                const current = start + (end - start) * easeOutQuad(progress);
+                const eased = easeOutCubic(progress);
 
-                if (isCurrency) {
-                    element.textContent = suffix + current.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                const currentPercent = startPercent + (endPercent - startPercent) * eased;
+                const currentValue = startValue + (endValue - startValue) * eased;
+
+                bar.style.width = currentPercent + '%';
+                valueEl.textContent = Math.round(currentValue) + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+
+            update();
+        }
+
+        function animateResponseBar(barId, valueId, duration) {
+            const bar = document.getElementById(barId);
+            const valueEl = document.getElementById(valueId);
+            const startTime = Date.now();
+
+            function update() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeOutCubic(progress);
+
+                // Bar grows to 95%
+                const currentPercent = 10 + (85 * eased);
+                bar.style.width = currentPercent + '%';
+
+                // Change gradient to green
+                if (eased > 0.7) {
+                    bar.style.background = 'linear-gradient(90deg, #34d399, #10b981)';
+                }
+
+                // Update text
+                if (eased < 0.3) {
+                    valueEl.textContent = '5 days';
+                } else if (eased < 0.6) {
+                    valueEl.textContent = '2 days';
+                } else if (eased < 0.9) {
+                    valueEl.textContent = '1 day';
                 } else {
-                    element.textContent = current.toFixed(current < 10 ? 2 : 0) + ' ' + suffix;
+                    valueEl.textContent = 'Instant';
                 }
 
                 if (progress < 1) {
@@ -605,29 +757,79 @@ Investment
             update();
         }
 
-        function easeOutQuad(t) {
-            return t * (2 - t);
+        function animateCounter(elementId, start, end, prefix, duration, isCurrency = false) {
+            const element = document.getElementById(elementId);
+            const startTime = Date.now();
+
+            function update() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = start + (end - start) * easeOutCubic(progress);
+
+                if (isCurrency) {
+                    element.textContent = prefix + current.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                } else {
+                    element.textContent = current.toFixed(2) + prefix;
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+
+            update();
+        }
+
+        function easeOutCubic(t) {
+            return 1 - Math.pow(1 - t, 3);
+        }
+
+        function wait(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
         }
 
         function reset() {
-            // Reset all stage statuses
+            clearInterval(countdownInterval);
+
+            // Reset all stages
+            document.querySelectorAll('.stage-card').forEach(card => card.classList.remove('active'));
             document.getElementById('stage1-status').innerHTML = 'Ready <span class="active-indicator"></span>';
             document.getElementById('stage2-status').textContent = 'Standby';
             document.getElementById('stage3-status').textContent = 'Standby';
             document.getElementById('stage4-status').textContent = 'Standby';
             document.getElementById('stage5-status').textContent = 'Standby';
-
-            // Hide details
             document.getElementById('stage2-detail').style.display = 'none';
             document.getElementById('stage3-detail').style.display = 'none';
 
             // Reset metrics
-            document.getElementById('capacity-after').textContent = '60 clients';
-            document.getElementById('time-before').textContent = '15 hrs/week';
-            document.getElementById('savings').textContent = '$49,500';
+            document.getElementById('capacity-bar').style.width = '33%';
+            document.getElementById('capacity-value').textContent = '20 clients';
+            document.getElementById('response-bar').style.width = '10%';
+            document.getElementById('response-bar').style.background = 'linear-gradient(90deg, #ef4444, #dc2626)';
+            document.getElementById('response-value').textContent = '5 days';
+            document.getElementById('hours-counter').textContent = '15.0 hrs';
+            document.getElementById('savings-counter').textContent = '$0';
 
             document.getElementById('playBtn').textContent = '▶ Play Animation';
             document.getElementById('playBtn').disabled = false;
+            document.getElementById('timer').textContent = 'Press play to start';
+        }
+
+        function startCountdown(seconds) {
+            let remaining = seconds;
+
+            countdownInterval = setInterval(() => {
+                remaining--;
+                const minutes = Math.floor(remaining / 60);
+                const secs = remaining % 60;
+                document.getElementById('timer').textContent =
+                    `Auto-replay in ${minutes}:${secs.toString().padStart(2, '0')}`;
+
+                if (remaining <= 0) {
+                    clearInterval(countdownInterval);
+                    animatePipeline();
+                }
+            }, 1000);
         }
 
         document.getElementById('playBtn').addEventListener('click', animatePipeline);

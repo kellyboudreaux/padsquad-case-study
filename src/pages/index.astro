@@ -531,8 +531,8 @@ graph LR
                                 <strong id="manualHours" class="text-red-600">60 hrs</strong>
                             </div>
                             <div class="flex justify-between border-t pt-3">
-                                <span>Annual cost (at $75/hr):</span>
-                                <strong id="manualCost" class="text-red-600 text-xl">$54,000</strong>
+                                <span>Annual cost (at $40/hr):</span>
+                                <strong id="manualCost" class="text-red-600 text-xl">$28,800</strong>
                             </div>
                         </div>
                     </div>
@@ -553,8 +553,8 @@ graph LR
                                 <strong id="automatedHours" class="text-green-600">5 hrs</strong>
                             </div>
                             <div class="flex justify-between border-t pt-3">
-                                <span>Annual cost (at $75/hr):</span>
-                                <strong id="automatedCost" class="text-green-600 text-xl">$4,500</strong>
+                                <span>Annual cost (at $40/hr):</span>
+                                <strong id="automatedCost" class="text-green-600 text-xl">$2,400</strong>
                             </div>
                         </div>
                     </div>
@@ -568,7 +568,7 @@ graph LR
                         </div>
                         <div>
                             <div class="text-sm text-gray-600 mb-1">Annual Cost Savings</div>
-                            <div class="text-4xl font-bold text-green-700" id="costSaved">$49,500</div>
+                            <div class="text-4xl font-bold text-green-700" id="costSaved">$26,400</div>
                         </div>
                         <div>
                             <div class="text-sm text-gray-600 mb-1">Efficiency Gain</div>
@@ -578,9 +578,10 @@ graph LR
                 </div>
 
                 <div class="mt-6 text-sm text-gray-600">
-                    <strong>Note:</strong> This calculation reflects ops staff time savings only. Additional value from
-                    faster client response times, enhanced CX, new client capacity for account managers, and ability
-                    to scale without headcount growth not included in dollar figures.
+                    <strong>Note:</strong> Hourly rate based on industry average for ad operations specialists ($38-40/hr).
+                    This calculation reflects ops staff time savings only. Additional value from faster client response times,
+                    enhanced CX, new client capacity for account managers, and ability to scale without headcount growth not
+                    included in dollar figures.
                 </div>
             </div>
         </div>
@@ -748,7 +749,7 @@ graph LR
             const automatedHoursPerMonth = clients * 0.25;
             const manualAnnualHours = manualHoursPerMonth * 12;
             const automatedAnnualHours = automatedHoursPerMonth * 12;
-            const hourlyRate = 75;
+            const hourlyRate = 40; // Ad ops specialist avg rate: $38-40/hr
 
             manualHours.textContent = manualHoursPerMonth + ' hrs';
             automatedHours.textContent = automatedHoursPerMonth.toFixed(1) + ' hrs';
