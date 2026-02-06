@@ -62,17 +62,13 @@ import '../styles/global.css';
             <h2 class="text-3xl font-bold mb-6">The Problem</h2>
             <div class="prose prose-lg max-w-none">
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    PADSquad serves enterprise clients like Home Depot, McDonald's, and Toyota with high-impact
-                    display and video advertising across CTV, mobile, and desktop. Each client delivers campaign
-                    performance data in different formats: Excel spreadsheets via email, CSV files with custom
-                    field names, Google Sheets links with varying metric structures.
+                    PADSquad manages high-impact advertising campaigns for 60+ enterprise clients like Home Depot, McDonald's, and Toyota across CTV, mobile, desktop, and native formats. With <strong>300+ active campaigns monthly</strong> running across multiple ad platforms (Google DV360, The Trade Desk, Amazon Advertising, programmatic exchanges), PADSquad receives campaign performance data from each platform—each with different formats, field names, and delivery methods (Excel via email, CSV via SFTP, API exports, Google Sheets).
                 </p>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Operations staff spend hours each week manually cleaning, normalizing, and transforming this data
-                    before reports can be generated. Account managers don't have one-click access to client-ready reports,
-                    which slows down client response times and limits how many clients each team can effectively serve.
-                    The manual bottleneck affects everyone: ops staff buried in tedious work, account managers without
-                    real-time insights, and clients waiting days for performance updates.
+                    Operations staff spend 15+ hours per week manually cleaning, normalizing, and transforming campaign data from these disparate ad platforms before PADSquad-branded reports can be generated for clients. <strong>Current capacity: 120 campaigns/month. Actual demand: 300 campaigns/month. Gap: 180 campaigns backlogged or inconsistently delivered.</strong>
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Account managers lack one-click access to client-ready reports, creating 3-5 day response times when clients request performance updates. The manual bottleneck affects everyone: ops staff buried in tedious work, account managers without real-time insights, and clients waiting days for data. This limits PADSquad's ability to scale without proportional headcount growth.
                 </p>
             </div>
 
@@ -103,11 +99,11 @@ import '../styles/global.css';
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="bg-orange-600 text-white px-6 py-4">
                         <h3 class="text-xl font-bold">Home Depot</h3>
-                        <div class="text-sm text-orange-100">Retail</div>
+                        <div class="text-sm text-orange-100">Retail • 18 active campaigns</div>
                     </div>
                     <div class="p-6">
-                        <div class="text-sm font-semibold text-gray-500 mb-2">DATA FORMAT</div>
-                        <div class="mb-4">Excel spreadsheet (.xlsx) via email</div>
+                        <div class="text-sm font-semibold text-gray-500 mb-2">DATA SOURCE</div>
+                        <div class="mb-4">Google DV360 → Excel (.xlsx) via email</div>
 
                         <div class="text-sm font-semibold text-gray-500 mb-2">FIELD NAMING</div>
                         <div class="font-mono text-xs bg-gray-50 p-3 rounded mb-4">
@@ -118,7 +114,7 @@ import '../styles/global.css';
                         </div>
 
                         <div class="text-sm font-semibold text-gray-500 mb-2">CHALLENGE</div>
-                        <div class="text-sm text-gray-700">Multiple sheets per file, aggregated weekly data with subtotals</div>
+                        <div class="text-sm text-gray-700">Multiple sheets per file, aggregated weekly data with subtotals, 18 campaigns require individual normalization</div>
                     </div>
                 </div>
 
@@ -126,11 +122,11 @@ import '../styles/global.css';
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="bg-red-600 text-white px-6 py-4">
                         <h3 class="text-xl font-bold">McDonald's</h3>
-                        <div class="text-sm text-red-100">QSR / Restaurant</div>
+                        <div class="text-sm text-red-100">QSR • 15 active campaigns</div>
                     </div>
                     <div class="p-6">
-                        <div class="text-sm font-semibold text-gray-500 mb-2">DATA FORMAT</div>
-                        <div class="mb-4">CSV file (.csv) via SFTP</div>
+                        <div class="text-sm font-semibold text-gray-500 mb-2">DATA SOURCE</div>
+                        <div class="mb-4">The Trade Desk → CSV (.csv) via SFTP</div>
 
                         <div class="text-sm font-semibold text-gray-500 mb-2">FIELD NAMING</div>
                         <div class="font-mono text-xs bg-gray-50 p-3 rounded mb-4">
@@ -141,7 +137,7 @@ import '../styles/global.css';
                         </div>
 
                         <div class="text-sm font-semibold text-gray-500 mb-2">CHALLENGE</div>
-                        <div class="text-sm text-gray-700">Daily data, abbreviated field names, multiple campaigns per file</div>
+                        <div class="text-sm text-gray-700">Daily data, abbreviated field names, 15 campaigns across multiple geo-targets and dayparts</div>
                     </div>
                 </div>
 
@@ -149,11 +145,11 @@ import '../styles/global.css';
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="bg-red-700 text-white px-6 py-4">
                         <h3 class="text-xl font-bold">Toyota</h3>
-                        <div class="text-sm text-red-100">Automotive</div>
+                        <div class="text-sm text-red-100">Automotive • 12 active campaigns</div>
                     </div>
                     <div class="p-6">
-                        <div class="text-sm font-semibold text-gray-500 mb-2">DATA FORMAT</div>
-                        <div class="mb-4">Google Sheets (shared link)</div>
+                        <div class="text-sm font-semibold text-gray-500 mb-2">DATA SOURCE</div>
+                        <div class="mb-4">Amazon Advertising → Google Sheets (API export)</div>
 
                         <div class="text-sm font-semibold text-gray-500 mb-2">FIELD NAMING</div>
                         <div class="font-mono text-xs bg-gray-50 p-3 rounded mb-4">
@@ -164,7 +160,7 @@ import '../styles/global.css';
                         </div>
 
                         <div class="text-sm font-semibold text-gray-500 mb-2">CHALLENGE</div>
-                        <div class="text-sm text-gray-700">Real-time updates, inconsistent date formatting, mixed aggregation levels</div>
+                        <div class="text-sm text-gray-700">Real-time updates, inconsistent date formatting, 12 campaigns across model launches and dealer groups</div>
                     </div>
                 </div>
             </div>
@@ -172,9 +168,10 @@ import '../styles/global.css';
             <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-6">
                 <div class="font-semibold text-blue-900 mb-2">The Pattern</div>
                 <div class="text-gray-700">
-                    Every client delivers the same core metrics (impressions, CTR, viewability, spend),
-                    but field names, formats, and delivery methods are completely inconsistent. Manual
-                    normalization is the bottleneck.
+                    Ad platforms deliver the same core metrics (impressions, CTR, viewability, spend) for all campaigns,
+                    but field names, formats, and delivery methods are completely inconsistent across platforms. With
+                    60+ clients running 300+ campaigns monthly across Google DV360, The Trade Desk, Amazon Advertising,
+                    and other exchanges, manual normalization is the bottleneck preventing scale.
                 </div>
             </div>
         </div>
@@ -230,9 +227,10 @@ graph LR
                         flows to clean and shape each client's format (removing subtotals, standardizing date formats, handling nulls).
                     </li>
                     <li>
-                        <strong>AI-Powered Normalization:</strong> Einstein AI or Claude API (via Salesforce Apex callout) maps
-                        inconsistent field names to standardized schema. "Total Impressions" / "imps" / "Served_Impressions" all
-                        become <code>Impressions__c</code>.
+                        <strong>AI-Powered Normalization:</strong> Known field mappings stored in a Salesforce custom metadata registry
+                        for instant lookup. For new or unknown fields, Einstein AI or Claude API (via Apex callout) maps them to the
+                        standardized schema and adds them to the registry. "Total Impressions" / "imps" / "Served_Impressions" all
+                        become <code>Impressions__c</code>. Confidence threshold: mappings below 90% confidence flagged for ops review.
                     </li>
                     <li>
                         <strong>Single Source of Truth:</strong> Normalized data writes to Salesforce Custom Object
@@ -322,7 +320,7 @@ graph LR
                             <ul class="text-gray-700 space-y-2 text-sm">
                                 <li><strong>Einstein AI or Claude API:</strong> Maps inconsistent field names to standardized schema</li>
                                 <li><strong>Salesforce Apex Callout:</strong> Triggers AI normalization within existing Salesforce flow</li>
-                                <li><strong>Learning System:</strong> Improves mapping accuracy over time as new clients are added</li>
+                                <li><strong>Mapping Registry:</strong> Known field mappings stored in Salesforce custom metadata; AI handles only new/unknown fields, reducing API calls and improving accuracy with each client onboarded</li>
                                 <li><strong>This is the only new component</strong> - everything else already exists at PADSquad</li>
                             </ul>
                         </div>
@@ -420,7 +418,7 @@ graph LR
                     <ul class="space-y-3 text-gray-700">
                         <li class="flex items-start gap-3">
                             <span class="text-green-600 font-bold text-xl">✓</span>
-                            <div><strong>AI does the heavy lifting:</strong> Automated data normalization and report generation eliminates 90%+ of tedious manual work</div>
+                            <div><strong>AI does the heavy lifting:</strong> Automated data normalization and report generation eliminates 80%+ of tedious manual work</div>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-green-600 font-bold text-xl">✓</span>
@@ -502,16 +500,18 @@ graph LR
 
             <div class="bg-white rounded-lg shadow-md p-8">
                 <div class="mb-8">
-                    <label class="block text-sm font-semibold mb-2">Number of Active Clients</label>
+                    <label class="block text-sm font-semibold mb-2">Campaigns Processed Per Month</label>
                     <input
                         type="range"
                         id="clientCount"
-                        min="5"
-                        max="50"
-                        value="20"
+                        min="50"
+                        max="300"
+                        step="10"
+                        value="120"
                         class="w-full"
                     />
-                    <div class="text-center text-3xl font-bold text-blue-600 mt-2" id="clientCountDisplay">20</div>
+                    <div class="text-center text-3xl font-bold text-blue-600 mt-2" id="clientCountDisplay">120</div>
+                    <div class="text-center text-sm text-gray-500 mt-2">Current capacity: 120/month • Demand: 300/month</div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
@@ -519,20 +519,20 @@ graph LR
                         <h3 class="text-xl font-bold mb-4">Current State (Manual)</h3>
                         <div class="space-y-3 text-gray-700">
                             <div class="flex justify-between">
-                                <span>Ops staff hours per report:</span>
+                                <span>Ops staff hours per campaign:</span>
                                 <strong>3 hrs</strong>
                             </div>
                             <div class="flex justify-between">
-                                <span>Reports per month:</span>
-                                <strong id="reportsPerMonth">20</strong>
+                                <span>Campaigns per month:</span>
+                                <strong id="reportsPerMonth">120</strong>
                             </div>
                             <div class="flex justify-between">
                                 <span>Total ops hours/month:</span>
-                                <strong id="manualHours" class="text-red-600">60 hrs</strong>
+                                <strong id="manualHours" class="text-red-600">360 hrs</strong>
                             </div>
                             <div class="flex justify-between border-t pt-3">
                                 <span>Annual cost (at $40/hr):</span>
-                                <strong id="manualCost" class="text-red-600 text-xl">$28,800</strong>
+                                <strong id="manualCost" class="text-red-600 text-xl">$172,800</strong>
                             </div>
                         </div>
                     </div>
@@ -541,20 +541,20 @@ graph LR
                         <h3 class="text-xl font-bold mb-4">Automated State</h3>
                         <div class="space-y-3 text-gray-700">
                             <div class="flex justify-between">
-                                <span>Ops staff hours per report:</span>
-                                <strong>0.25 hrs</strong>
+                                <span>Ops staff hours per campaign:</span>
+                                <strong>0.5 hrs</strong>
                             </div>
                             <div class="flex justify-between">
-                                <span>Reports per month:</span>
-                                <strong id="automatedReportsPerMonth">20</strong>
+                                <span>Campaigns per month:</span>
+                                <strong id="automatedReportsPerMonth">120</strong>
                             </div>
                             <div class="flex justify-between">
                                 <span>Total ops hours/month:</span>
-                                <strong id="automatedHours" class="text-green-600">5 hrs</strong>
+                                <strong id="automatedHours" class="text-green-600">30 hrs</strong>
                             </div>
                             <div class="flex justify-between border-t pt-3">
                                 <span>Annual cost (at $40/hr):</span>
-                                <strong id="automatedCost" class="text-green-600 text-xl">$2,400</strong>
+                                <strong id="automatedCost" class="text-green-600 text-xl">$14,400</strong>
                             </div>
                         </div>
                     </div>
@@ -564,24 +564,24 @@ graph LR
                     <div class="grid md:grid-cols-3 gap-6 text-center">
                         <div>
                             <div class="text-sm text-gray-600 mb-1">Annual Time Savings</div>
-                            <div class="text-4xl font-bold text-green-700" id="timeSaved">660 hrs</div>
+                            <div class="text-4xl font-bold text-green-700" id="timeSaved">3,960 hrs</div>
                         </div>
                         <div>
                             <div class="text-sm text-gray-600 mb-1">Annual Cost Savings</div>
-                            <div class="text-4xl font-bold text-green-700" id="costSaved">$26,400</div>
+                            <div class="text-4xl font-bold text-green-700" id="costSaved">$158,400</div>
                         </div>
                         <div>
                             <div class="text-sm text-gray-600 mb-1">Efficiency Gain</div>
-                            <div class="text-4xl font-bold text-green-700">92%</div>
+                            <div class="text-4xl font-bold text-green-700">83%</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-6 text-sm text-gray-600">
                     <strong>Note:</strong> Hourly rate based on industry average for ad operations specialists ($38-40/hr).
-                    This calculation reflects ops staff time savings only. Additional value from faster client response times,
-                    enhanced CX, new client capacity for account managers, and ability to scale without headcount growth not
-                    included in dollar figures.
+                    Automated estimate (0.5 hrs) includes QA validation and exception handling time.
+                    Implementation costs (Apex development, Tableau Prep configuration, AI API consumption ~$200-400/mo at scale)
+                    offset by savings within first 60 days. Full cost breakdown available on request.
                 </div>
             </div>
         </div>
@@ -678,8 +678,107 @@ graph LR
                         </div>
                     </div>
                     <div class="mt-4 bg-green-50 p-4 rounded">
-                        <strong>Success Metric:</strong> Full client base automated, 90%+ time reduction achieved, measurable ROI documented
+                        <strong>Success Metric:</strong> Full client base automated, 80%+ time reduction achieved, measurable ROI documented
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risks & Mitigation -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4">Risks and Mitigation</h2>
+            <p class="text-gray-600 mb-8">Every automation introduces new failure modes. Here's what could go wrong and how we handle it.</p>
+
+            <div class="space-y-6">
+                <!-- Risk 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap">HIGH</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg mb-2">AI field mapping returns incorrect normalization</h3>
+                            <div class="text-gray-600 mb-3">A wrong mapping (e.g., "cost_usd" mapped to "investment" when they're different metrics) produces an inaccurate client report.</div>
+                            <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                                <div class="font-semibold text-green-900 mb-1">Mitigation</div>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>Mapping registry handles known fields (no AI call needed for ~80% of fields after onboarding 10 clients)</li>
+                                    <li>AI mappings below 90% confidence flagged for manual ops review before production write</li>
+                                    <li>Staged validation: data writes to staging object first, ops staff approves before promoting to production</li>
+                                    <li>Rollback: batch delete of records by import_batch_id if bad data reaches production</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap">MED</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg mb-2">AI API downtime during critical reporting period</h3>
+                            <div class="text-gray-600 mb-3">Claude or Einstein API unavailable when end-of-month reports need processing.</div>
+                            <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                                <div class="font-semibold text-green-900 mb-1">Mitigation</div>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>Mapping registry serves as local fallback for all previously seen field names (no API needed)</li>
+                                    <li>Only truly new fields require live API calls; these can queue and retry with exponential backoff</li>
+                                    <li>Manual override: ops staff can map unknown fields directly via Salesforce UI</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap">MED</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg mb-2">Client changes data format mid-contract</h3>
+                            <div class="text-gray-600 mb-3">Home Depot switches from weekly Excel to API export, or adds new fields that don't fit the normalized schema.</div>
+                            <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                                <div class="font-semibold text-green-900 mb-1">Mitigation</div>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>Tableau Prep flows are per-client, so format changes affect one flow, not the whole pipeline</li>
+                                    <li>New fields trigger AI normalization automatically; known fields still resolve from registry</li>
+                                    <li>Delivery method changes (email to SFTP) require new ingestion path but downstream stays identical</li>
+                                    <li>Estimated reconfiguration time: 2-4 hours per client format change</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-bold whitespace-nowrap">MED</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg mb-2">Team adoption resistance</h3>
+                            <div class="text-gray-600 mb-3">Account managers or ops staff don't trust or use the automated workflow.</div>
+                            <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                                <div class="font-semibold text-green-900 mb-1">Mitigation</div>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>Pilot with 2 willing account managers first; let early adopters validate before full rollout</li>
+                                    <li>Run automated and manual in parallel during pilot (no risk of lost reports)</li>
+                                    <li>Ops staff retain ability to manually override any step; automation assists, doesn't replace judgment</li>
+                                    <li>Week 8 dedicated to training and documented SOPs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-6">
+                <div class="font-semibold text-blue-900 mb-2">Validation Framework</div>
+                <div class="text-gray-700 text-sm">
+                    <strong>Before any client goes live:</strong> AI field mapping must achieve 95%+ accuracy on that client's
+                    historical data (tested against manually verified mappings). QA checklist requires ops staff sign-off on
+                    first 3 automated reports before removing manual parallel processing. Accuracy and error rates tracked
+                    on a Salesforce dashboard visible to ops leads.
                 </div>
             </div>
         </div>
@@ -700,7 +799,7 @@ graph LR
                 PADSquad scaling without headcount growth.
             </p>
             <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-                The result: 90%+ efficiency gain, enhanced customer experience, and the capacity to grow
+                The result: 83% efficiency gain, enhanced customer experience, and the capacity to grow
                 the business with your existing team.
             </p>
 
@@ -746,7 +845,7 @@ graph LR
             automatedReportsPerMonth.textContent = clients;
 
             const manualHoursPerMonth = clients * 3;
-            const automatedHoursPerMonth = clients * 0.25;
+            const automatedHoursPerMonth = clients * 0.5;
             const manualAnnualHours = manualHoursPerMonth * 12;
             const automatedAnnualHours = automatedHoursPerMonth * 12;
             const hourlyRate = 40; // Ad ops specialist avg rate: $38-40/hr

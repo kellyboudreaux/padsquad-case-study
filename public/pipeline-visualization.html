@@ -13,14 +13,14 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: #f9fafb;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            color: white;
+            color: #1e293b;
         }
 
         .container {
@@ -37,7 +37,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #60a5fa, #34d399);
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -45,7 +45,7 @@
 
         .header p {
             font-size: 1.1rem;
-            color: #94a3b8;
+            color: #64748b;
         }
 
         .pipeline {
@@ -62,17 +62,17 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: white;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 20px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
         }
 
         .card:hover {
-            background: rgba(255, 255, 255, 0.08);
             border-color: rgba(96, 165, 250, 0.5);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transform: translateY(-2px);
         }
 
@@ -81,13 +81,14 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #94a3b8;
+            color: #64748b;
             margin-bottom: 8px;
         }
 
         .card-content {
             font-size: 1.125rem;
             font-weight: 600;
+            color: #1e293b;
         }
 
         .client-card {
@@ -108,11 +109,11 @@
         .client-data {
             font-family: 'Courier New', monospace;
             font-size: 0.75rem;
-            background: rgba(0, 0, 0, 0.3);
+            background: #f1f5f9;
             padding: 8px;
             border-radius: 4px;
             margin-top: 12px;
-            color: #cbd5e1;
+            color: #475569;
             line-height: 1.6;
         }
 
@@ -125,10 +126,10 @@
         }
 
         .stage-card.active {
-            background: rgba(96, 165, 250, 0.15);
-            border-color: #60a5fa;
+            background: #eff6ff;
+            border-color: #3b82f6;
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(96, 165, 250, 0.4);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
         }
 
         .stage-icon {
@@ -154,18 +155,18 @@
 
         .stage-status {
             font-size: 0.75rem;
-            color: #94a3b8;
+            color: #64748b;
             margin-top: 4px;
         }
 
         .stage-detail {
             font-size: 0.875rem;
-            color: #64748b;
+            color: #475569;
             margin-top: 12px;
             padding: 12px;
-            background: rgba(0, 0, 0, 0.3);
+            background: #f1f5f9;
             border-radius: 6px;
-            border-left: 3px solid #60a5fa;
+            border-left: 3px solid #3b82f6;
         }
 
         .stage-detail-item {
@@ -177,16 +178,10 @@
             animation: fadeIn 0.5s ease forwards;
         }
 
-        .stage-detail-item:nth-child(1) { animation-delay: 0.2s; }
-        .stage-detail-item:nth-child(2) { animation-delay: 0.4s; }
-        .stage-detail-item:nth-child(3) { animation-delay: 0.6s; }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
+        /* Detail items animated via JS .visible class */
 
         .checkmark {
-            color: #34d399;
+            color: #059669;
             font-weight: bold;
         }
 
@@ -205,19 +200,19 @@
         }
 
         .impact-card {
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(52, 211, 153, 0.1));
-            border: 1px solid rgba(96, 165, 250, 0.3);
+            background: linear-gradient(135deg, #eff6ff, #ecfdf5);
+            border: 1px solid #bfdbfe;
         }
 
         .metric-label {
             font-size: 0.875rem;
             font-weight: 600;
-            color: #94a3b8;
+            color: #475569;
             margin-bottom: 12px;
         }
 
         .progress-bar-container {
-            background: rgba(0, 0, 0, 0.3);
+            background: #e2e8f0;
             border-radius: 8px;
             height: 40px;
             margin-bottom: 16px;
@@ -248,8 +243,7 @@
             font-weight: 700;
             text-align: center;
             margin: 20px 0;
-            color: #34d399;
-            text-shadow: 0 0 20px rgba(52, 211, 153, 0.5);
+            color: #059669;
         }
 
         .metric-comparison {
@@ -266,18 +260,18 @@
         }
 
         .metric-box.before {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            background: #fef2f2;
+            border: 1px solid #fecaca;
         }
 
         .metric-box.after {
-            background: rgba(52, 211, 153, 0.1);
-            border: 1px solid rgba(52, 211, 153, 0.3);
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
         }
 
         .metric-box-label {
             font-size: 0.75rem;
-            color: #94a3b8;
+            color: #64748b;
             margin-bottom: 4px;
         }
 
@@ -291,7 +285,7 @@
         }
 
         .metric-box.after .metric-box-value {
-            color: #34d399;
+            color: #059669;
         }
 
         .controls {
@@ -327,13 +321,13 @@
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: white;
+            color: #475569;
+            border: 1px solid #e2e8f0;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: #f1f5f9;
         }
 
         .active-indicator {
@@ -351,7 +345,7 @@
             50% { opacity: 0.5; transform: scale(1.3); }
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 768px) {
             .pipeline {
                 grid-template-columns: 1fr;
             }
@@ -367,7 +361,8 @@
             gap: 30px;
             margin-top: 30px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
         }
 
@@ -376,7 +371,7 @@
             align-items: center;
             gap: 10px;
             font-size: 0.875rem;
-            color: #94a3b8;
+            color: #475569;
         }
 
         .legend-color {
@@ -391,6 +386,49 @@
             color: #64748b;
             margin-top: 20px;
         }
+
+        .client-card.sending {
+            border-color: #3b82f6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+        }
+
+        .client-card.sent {
+            border-color: #059669;
+            box-shadow: 0 0 10px rgba(5, 150, 105, 0.15);
+        }
+
+        .client-card.sent::after {
+            content: '✓ Received';
+            position: absolute;
+            bottom: 8px;
+            right: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #059669;
+        }
+
+        .processing-counter {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: #3b82f6;
+            margin-top: 6px;
+            min-height: 1.2em;
+        }
+
+        .stage-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 6px 0;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .stage-detail-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body>
@@ -404,8 +442,8 @@
             <!-- LEFT: Data Sources -->
             <div class="column">
                 <div class="card client-card" style="--color: #f97316;">
-                    <div class="card-title">Home Depot</div>
-                    <div class="card-content">Retail • Excel Email</div>
+                    <div class="card-title">Home Depot • 18 campaigns</div>
+                    <div class="card-content">Google DV360 → Excel</div>
                     <div class="client-data">
 Total Impressions<br>
 Click Through Rate<br>
@@ -415,8 +453,8 @@ Media Spend
                 </div>
 
                 <div class="card client-card" style="--color: #ef4444;">
-                    <div class="card-title">McDonald's</div>
-                    <div class="card-content">QSR • CSV SFTP</div>
+                    <div class="card-title">McDonald's • 15 campaigns</div>
+                    <div class="card-content">The Trade Desk → CSV SFTP</div>
                     <div class="client-data">
 imps,ctr_pct,<br>
 viewability_rate,<br>
@@ -425,8 +463,8 @@ total_cost_usd
                 </div>
 
                 <div class="card client-card" style="--color: #dc2626;">
-                    <div class="card-title">Toyota</div>
-                    <div class="card-content">Automotive • Google Sheets</div>
+                    <div class="card-title">Toyota • 12 campaigns</div>
+                    <div class="card-content">Amazon Ads → Google Sheets</div>
                     <div class="client-data">
 Served_Impressions<br>
 CTR,VCR_Percent,<br>
@@ -444,6 +482,17 @@ Investment
                     <div class="stage-content">
                         <div class="card-content">Salesforce Email-to-Case</div>
                         <div class="stage-status" id="stage1-status">Ready <span class="active-indicator"></span></div>
+                        <div class="stage-detail" id="stage1-detail" style="display: none;">
+                            <div class="stage-detail-item">
+                                <span class="checkmark">✓</span> Home Depot Excel received (18 campaigns)
+                            </div>
+                            <div class="stage-detail-item">
+                                <span class="checkmark">✓</span> McDonald's CSV via SFTP (15 campaigns)
+                            </div>
+                            <div class="stage-detail-item">
+                                <span class="checkmark">✓</span> Toyota Google Sheets synced (12 campaigns)
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -496,6 +545,17 @@ Investment
                     <div class="stage-content">
                         <div class="card-content">Salesforce SSOT</div>
                         <div class="stage-status" id="stage4-status">Standby</div>
+                        <div class="stage-detail" id="stage4-detail" style="display: none;">
+                            <div class="stage-detail-item">
+                                <span class="checkmark">✓</span> 45 campaign records written
+                            </div>
+                            <div class="stage-detail-item">
+                                <span class="checkmark">✓</span> Campaign_Performance__c updated
+                            </div>
+                            <div class="stage-detail-item">
+                                <span class="checkmark">✓</span> Audit trail logged
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -506,6 +566,17 @@ Investment
                     <div class="stage-content">
                         <div class="card-content">Automated Report Generation</div>
                         <div class="stage-status" id="stage5-status">Standby</div>
+                        <div class="stage-detail" id="stage5-detail" style="display: none;">
+                            <div class="stage-detail-item">
+                                <span class="checkmark">✓</span> Tableau dashboard refreshed
+                            </div>
+                            <div class="stage-detail-item">
+                                <span class="checkmark">✓</span> PADSquad-branded PDF generated
+                            </div>
+                            <div class="stage-detail-item">
+                                <span class="checkmark">✓</span> Account managers notified
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -612,196 +683,248 @@ Investment
     <script>
         let isAnimating = false;
         let countdownInterval = null;
+        const clientCards = document.querySelectorAll('.client-card');
+
+        function wait(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+        function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+        function revealDetails(detailId) {
+            const detail = document.getElementById(detailId);
+            detail.style.display = 'block';
+            const items = detail.querySelectorAll('.stage-detail-item');
+            items.forEach((item, i) => {
+                setTimeout(() => item.classList.add('visible'), (i + 1) * 1200);
+            });
+        }
+
+        function setStatus(id, html) {
+            document.getElementById(id).innerHTML = html;
+        }
+
+        function activateStage(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function deactivateStage(id) {
+            document.getElementById(id).classList.remove('active');
+            const statusEl = document.getElementById(id + '-status');
+            statusEl.innerHTML = '<span style="color:#059669;font-weight:600">Complete ✓</span>';
+        }
+
+        function animateValue(elementId, start, end, suffix, duration, isCurrency) {
+            const el = document.getElementById(elementId);
+            const startTime = Date.now();
+            function tick() {
+                const p = Math.min((Date.now() - startTime) / duration, 1);
+                const v = start + (end - start) * easeOutCubic(p);
+                if (isCurrency) {
+                    el.textContent = '$' + v.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                } else {
+                    el.textContent = v.toFixed(v < 10 ? 2 : 0) + suffix;
+                }
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            tick();
+        }
+
+        function animateBar(barId, valId, sp, ep, sv, ev, suffix, dur) {
+            const bar = document.getElementById(barId);
+            const val = document.getElementById(valId);
+            const t0 = Date.now();
+            function tick() {
+                const p = Math.min((Date.now() - t0) / dur, 1);
+                const e = easeOutCubic(p);
+                bar.style.width = (sp + (ep - sp) * e) + '%';
+                val.textContent = Math.round(sv + (ev - sv) * e) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            tick();
+        }
+
+        function animateResponseBar(dur) {
+            const bar = document.getElementById('response-bar');
+            const val = document.getElementById('response-value');
+            const t0 = Date.now();
+            function tick() {
+                const p = Math.min((Date.now() - t0) / dur, 1);
+                const e = easeOutCubic(p);
+                bar.style.width = (10 + 85 * e) + '%';
+                if (e > 0.7) bar.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+                val.textContent = e < 0.3 ? '5 days' : e < 0.6 ? '2 days' : e < 0.9 ? '1 day' : 'Instant';
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            tick();
+        }
 
         async function animatePipeline() {
             if (isAnimating) return;
             isAnimating = true;
-
             const playBtn = document.getElementById('playBtn');
             playBtn.textContent = '⏸ Animating...';
             playBtn.disabled = true;
-
             clearInterval(countdownInterval);
-            document.getElementById('timer').textContent = 'Animation in progress...';
+            document.getElementById('timer').textContent = 'Pipeline processing...';
 
-            // Stage 1: Email-to-Case (15 seconds)
-            await activateStage('stage1', 'stage1-status', 'Receiving client data...', null, 15000);
+            // ── STAGE 1: Email-to-Case (18s) ──
+            // Client cards light up one at a time as data arrives
+            activateStage('stage1');
+            setStatus('stage1-status', 'Scanning inboxes... <span class="processing"></span>');
+            await wait(2000);
 
-            // Stage 2: Tableau Prep (20 seconds)
-            await activateStage('stage2', 'stage2-status', 'Cleaning and shaping data...', 'stage2-detail', 20000);
+            // Home Depot arrives
+            clientCards[0].classList.add('sending');
+            setStatus('stage1-status', 'Receiving Home Depot data... <span class="processing"></span>');
+            await wait(3000);
+            clientCards[0].classList.remove('sending');
+            clientCards[0].classList.add('sent');
+            document.getElementById('stage1-detail').style.display = 'block';
+            document.querySelector('#stage1-detail .stage-detail-item:nth-child(1)').classList.add('visible');
+            await wait(1500);
 
-            // Stage 3: AI Normalization (25 seconds)
-            await activateStage('stage3', 'stage3-status', 'AI mapping field names...', 'stage3-detail', 25000);
+            // McDonald's arrives
+            clientCards[1].classList.add('sending');
+            setStatus('stage1-status', "Receiving McDonald's via SFTP... <span class='processing'></span>");
+            await wait(3000);
+            clientCards[1].classList.remove('sending');
+            clientCards[1].classList.add('sent');
+            document.querySelector('#stage1-detail .stage-detail-item:nth-child(2)').classList.add('visible');
+            await wait(1500);
 
-            // Stage 4: Salesforce SSOT (15 seconds)
-            await activateStage('stage4', 'stage4-status', 'Writing to database...', null, 15000);
+            // Toyota arrives
+            clientCards[2].classList.add('sending');
+            setStatus('stage1-status', 'Syncing Toyota Google Sheets... <span class="processing"></span>');
+            await wait(3000);
+            clientCards[2].classList.remove('sending');
+            clientCards[2].classList.add('sent');
+            document.querySelector('#stage1-detail .stage-detail-item:nth-child(3)').classList.add('visible');
+            await wait(2000);
 
-            // Stage 5: Report Generation (20 seconds)
-            await activateStage('stage5', 'stage5-status', 'Generating PADSquad report...', null, 20000);
+            setStatus('stage1-status', '45 campaigns ingested <span style="color:#059669;font-weight:600">✓</span>');
+            deactivateStage('stage1');
+            await wait(1000);
 
-            // Animate impact metrics (15 seconds)
-            await animateMetrics(15000);
+            // ── STAGE 2: Tableau Prep (18s) ──
+            activateStage('stage2');
+            setStatus('stage2-status', 'Initializing ETL flow... <span class="processing"></span>');
+            await wait(2500);
 
-            // Hold final state (10 seconds)
-            await wait(10000);
+            document.getElementById('stage2-detail').style.display = 'block';
+            setStatus('stage2-status', 'Removing subtotals from Excel... <span class="processing"></span>');
+            document.querySelector('#stage2-detail .stage-detail-item:nth-child(1)').classList.add('visible');
+            await wait(4000);
+
+            setStatus('stage2-status', 'Standardizing date formats... <span class="processing"></span>');
+            document.querySelector('#stage2-detail .stage-detail-item:nth-child(2)').classList.add('visible');
+            await wait(4000);
+
+            setStatus('stage2-status', 'Handling null values... <span class="processing"></span>');
+            document.querySelector('#stage2-detail .stage-detail-item:nth-child(3)').classList.add('visible');
+            await wait(3500);
+
+            // Start hours counter ticking down early
+            animateValue('hours-counter', 15, 8, ' hrs', 5000, false);
+
+            setStatus('stage2-status', 'Data cleaned and shaped <span style="color:#059669;font-weight:600">✓</span>');
+            deactivateStage('stage2');
+            await wait(1000);
+
+            // ── STAGE 3: AI Normalization (20s) ──
+            activateStage('stage3');
+            setStatus('stage3-status', 'Checking field mapping registry... <span class="processing"></span>');
+            await wait(3000);
+
+            document.getElementById('stage3-detail').style.display = 'block';
+            setStatus('stage3-status', 'Mapping: "Total Impressions" → Impressions__c <span class="processing"></span>');
+            document.querySelector('#stage3-detail .stage-detail-item:nth-child(1)').classList.add('visible');
+            await wait(4000);
+
+            setStatus('stage3-status', 'Mapping: "Click Through Rate" → CTR__c <span class="processing"></span>');
+            document.querySelector('#stage3-detail .stage-detail-item:nth-child(2)').classList.add('visible');
+            await wait(4000);
+
+            setStatus('stage3-status', 'Mapping: "Media Spend" → Spend__c <span class="processing"></span>');
+            document.querySelector('#stage3-detail .stage-detail-item:nth-child(3)').classList.add('visible');
+            await wait(3500);
+
+            // Continue hours counter
+            animateValue('hours-counter', 8, 3, ' hrs', 4000, false);
+
+            setStatus('stage3-status', '98% confidence • All fields mapped <span style="color:#059669;font-weight:600">✓</span>');
+            deactivateStage('stage3');
+            await wait(1500);
+
+            // ── STAGE 4: Salesforce SSOT (15s) ──
+            activateStage('stage4');
+            setStatus('stage4-status', 'Writing normalized records... <span class="processing"></span>');
+            await wait(2500);
+
+            document.getElementById('stage4-detail').style.display = 'block';
+            document.querySelector('#stage4-detail .stage-detail-item:nth-child(1)').classList.add('visible');
+            await wait(3000);
+
+            setStatus('stage4-status', 'Updating Campaign_Performance__c... <span class="processing"></span>');
+            document.querySelector('#stage4-detail .stage-detail-item:nth-child(2)').classList.add('visible');
+            // Start capacity bar animating
+            animateBar('capacity-bar', 'capacity-value', 33, 100, 20, 60, ' clients', 8000);
+            await wait(3500);
+
+            document.querySelector('#stage4-detail .stage-detail-item:nth-child(3)').classList.add('visible');
+            await wait(2000);
+
+            // Hours counter to final
+            animateValue('hours-counter', 3, 1.25, ' hrs', 4000, false);
+
+            deactivateStage('stage4');
+            await wait(1000);
+
+            // ── STAGE 5: Report Generation (15s) ──
+            activateStage('stage5');
+            setStatus('stage5-status', 'Refreshing Tableau dashboards... <span class="processing"></span>');
+            await wait(3000);
+
+            document.getElementById('stage5-detail').style.display = 'block';
+            document.querySelector('#stage5-detail .stage-detail-item:nth-child(1)').classList.add('visible');
+            await wait(3000);
+
+            setStatus('stage5-status', 'Generating branded PDF reports... <span class="processing"></span>');
+            document.querySelector('#stage5-detail .stage-detail-item:nth-child(2)').classList.add('visible');
+            // Start response time and savings animating
+            animateResponseBar(6000);
+            animateValue('savings-counter', 0, 26400, '', 8000, true);
+            await wait(3500);
+
+            setStatus('stage5-status', 'Notifying account managers... <span class="processing"></span>');
+            document.querySelector('#stage5-detail .stage-detail-item:nth-child(3)').classList.add('visible');
+            await wait(3000);
+
+            deactivateStage('stage5');
+
+            // Hold final state
+            document.getElementById('timer').textContent = 'Pipeline complete. 45 campaigns processed.';
+            await wait(12000);
 
             isAnimating = false;
             playBtn.textContent = '▶ Play Again';
             playBtn.disabled = false;
-
-            // Start countdown to auto-replay
-            startCountdown(120); // 2 minutes
-        }
-
-        async function activateStage(stageId, statusId, statusText, detailId, duration) {
-            // Activate stage
-            const stage = document.getElementById(stageId);
-            stage.classList.add('active');
-
-            // Update status with spinner
-            const status = document.getElementById(statusId);
-            status.innerHTML = statusText + ' <span class="processing"></span>';
-
-            // Show details if applicable
-            if (detailId) {
-                document.getElementById(detailId).style.display = 'block';
-            }
-
-            // Wait for duration
-            await wait(duration);
-
-            // Mark complete
-            status.innerHTML = 'Complete ✓';
-
-            // Deactivate stage
-            stage.classList.remove('active');
-        }
-
-        async function animateMetrics(duration) {
-            const startTime = Date.now();
-
-            // Animate capacity bar
-            animateProgressBar('capacity-bar', 'capacity-value', 33, 100, 20, 60, ' clients', duration);
-
-            // Animate response time bar (reverse - gets better)
-            animateResponseBar('response-bar', 'response-value', duration);
-
-            // Animate hours counter (decreasing)
-            animateCounter('hours-counter', 15, 1.25, ' hrs', duration);
-
-            // Animate savings counter (increasing)
-            animateCounter('savings-counter', 0, 26400, '$', duration, true);
-
-            await wait(duration);
-        }
-
-        function animateProgressBar(barId, valueId, startPercent, endPercent, startValue, endValue, suffix, duration) {
-            const bar = document.getElementById(barId);
-            const valueEl = document.getElementById(valueId);
-            const startTime = Date.now();
-
-            function update() {
-                const elapsed = Date.now() - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = easeOutCubic(progress);
-
-                const currentPercent = startPercent + (endPercent - startPercent) * eased;
-                const currentValue = startValue + (endValue - startValue) * eased;
-
-                bar.style.width = currentPercent + '%';
-                valueEl.textContent = Math.round(currentValue) + suffix;
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                }
-            }
-
-            update();
-        }
-
-        function animateResponseBar(barId, valueId, duration) {
-            const bar = document.getElementById(barId);
-            const valueEl = document.getElementById(valueId);
-            const startTime = Date.now();
-
-            function update() {
-                const elapsed = Date.now() - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = easeOutCubic(progress);
-
-                // Bar grows to 95%
-                const currentPercent = 10 + (85 * eased);
-                bar.style.width = currentPercent + '%';
-
-                // Change gradient to green
-                if (eased > 0.7) {
-                    bar.style.background = 'linear-gradient(90deg, #34d399, #10b981)';
-                }
-
-                // Update text
-                if (eased < 0.3) {
-                    valueEl.textContent = '5 days';
-                } else if (eased < 0.6) {
-                    valueEl.textContent = '2 days';
-                } else if (eased < 0.9) {
-                    valueEl.textContent = '1 day';
-                } else {
-                    valueEl.textContent = 'Instant';
-                }
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                }
-            }
-
-            update();
-        }
-
-        function animateCounter(elementId, start, end, prefix, duration, isCurrency = false) {
-            const element = document.getElementById(elementId);
-            const startTime = Date.now();
-
-            function update() {
-                const elapsed = Date.now() - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const current = start + (end - start) * easeOutCubic(progress);
-
-                if (isCurrency) {
-                    element.textContent = prefix + current.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                } else {
-                    element.textContent = current.toFixed(2) + prefix;
-                }
-
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                }
-            }
-
-            update();
-        }
-
-        function easeOutCubic(t) {
-            return 1 - Math.pow(1 - t, 3);
-        }
-
-        function wait(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
+            startCountdown(90);
         }
 
         function reset() {
             clearInterval(countdownInterval);
+            document.querySelectorAll('.stage-card').forEach(c => c.classList.remove('active'));
+            clientCards.forEach(c => { c.classList.remove('sending', 'sent'); });
 
-            // Reset all stages
-            document.querySelectorAll('.stage-card').forEach(card => card.classList.remove('active'));
-            document.getElementById('stage1-status').innerHTML = 'Ready <span class="active-indicator"></span>';
-            document.getElementById('stage2-status').textContent = 'Standby';
-            document.getElementById('stage3-status').textContent = 'Standby';
-            document.getElementById('stage4-status').textContent = 'Standby';
-            document.getElementById('stage5-status').textContent = 'Standby';
-            document.getElementById('stage2-detail').style.display = 'none';
-            document.getElementById('stage3-detail').style.display = 'none';
+            setStatus('stage1-status', 'Ready <span class="active-indicator"></span>');
+            ['stage2','stage3','stage4','stage5'].forEach(s => {
+                document.getElementById(s + '-status').textContent = 'Standby';
+            });
 
-            // Reset metrics
+            ['stage1-detail','stage2-detail','stage3-detail','stage4-detail','stage5-detail'].forEach(id => {
+                const el = document.getElementById(id);
+                el.style.display = 'none';
+                el.querySelectorAll('.stage-detail-item').forEach(i => i.classList.remove('visible'));
+            });
+
             document.getElementById('capacity-bar').style.width = '33%';
             document.getElementById('capacity-value').textContent = '20 clients';
             document.getElementById('response-bar').style.width = '10%';
@@ -817,28 +940,20 @@ Investment
 
         function startCountdown(seconds) {
             let remaining = seconds;
-
             countdownInterval = setInterval(() => {
                 remaining--;
-                const minutes = Math.floor(remaining / 60);
-                const secs = remaining % 60;
-                document.getElementById('timer').textContent =
-                    `Auto-replay in ${minutes}:${secs.toString().padStart(2, '0')}`;
-
-                if (remaining <= 0) {
-                    clearInterval(countdownInterval);
-                    animatePipeline();
-                }
+                const m = Math.floor(remaining / 60);
+                const s = remaining % 60;
+                document.getElementById('timer').textContent = `Auto-replay in ${m}:${s.toString().padStart(2, '0')}`;
+                if (remaining <= 0) { clearInterval(countdownInterval); reset(); setTimeout(animatePipeline, 500); }
             }, 1000);
         }
 
-        document.getElementById('playBtn').addEventListener('click', animatePipeline);
+        document.getElementById('playBtn').addEventListener('click', () => { reset(); setTimeout(animatePipeline, 300); });
         document.getElementById('resetBtn').addEventListener('click', reset);
 
         // Auto-play on load
-        setTimeout(() => {
-            animatePipeline();
-        }, 1000);
+        setTimeout(animatePipeline, 1500);
     </script>
 </body>
 </html>
