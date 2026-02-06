@@ -6,13 +6,13 @@
 
 Dan,
 
-Thank you for the conversation yesterday. The challenge you described (client data arriving in three different formats, account managers spending hours on manual normalization before they can generate reports) is a problem I know how to solve.
+Thank you for the conversation yesterday. The challenge you described (client data arriving in three different formats, operations staff spending hours on manual processing each week, account managers without one-click report access) is a problem I know how to solve.
 
 Rather than send you a traditional 30/60/90 plan, I built something more useful: a working architecture for how I'd automate your reporting pipeline using the infrastructure you already have in place.
 
 **Live case study:** [INSERT NETLIFY URL HERE]
 
-The solution leverages 95% of your existing stack (Salesforce + Tableau) and adds one intelligent layer for AI-powered field mapping. The result is 90%+ time savings on report generation, freeing your account managers to do strategic client work instead of data wrangling.
+The solution leverages 95% of your existing stack (Salesforce + Tableau) and adds one intelligent layer for AI-powered field mapping. The result: ops staff freed from tedious manual work to serve more clients, account managers with one-click report access for faster client response, and the capacity to scale without adding headcount.
 
 Key architectural decisions:
 - **Salesforce Email-to-Case** for data ingestion (no new tool)
